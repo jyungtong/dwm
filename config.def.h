@@ -72,6 +72,7 @@ static const Key keys[] = {
   { 0,                            XF86XK_AudioLowerVolume, spawn,          {.v = downvol } },
   { 0,                            XF86XK_AudioMute, spawn,                 {.v = mute } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("j4-dmenu-desktop --dmenu='dmenu -i -l 5'") },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
