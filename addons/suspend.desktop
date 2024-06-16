@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=Suspend System
+Comment=Suspend the system using systemd
+Exec=systemctl suspend
+Icon=system-suspend
+Terminal=false
+Type=Application
+Categories=System;Utility;
+Keywords=suspend;hibernate;sleep;
