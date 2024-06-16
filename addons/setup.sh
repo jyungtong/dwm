@@ -4,6 +4,9 @@
 sudo apt install j4-dmenu-desktop
 sudo apt install blueman
 
+# setup dwm login session
+sudo cp $(pwd)/dwm.desktop /usr/share/xsessions/dwm.desktop
+
 # setup networkmanager_dmenu
 sudo curl -L https://github.com/firecat53/networkmanager-dmenu/raw/main/networkmanager_dmenu -o /usr/local/bin/networkmanager_dmenu
 sudo curl -L https://github.com/firecat53/networkmanager-dmenu/raw/main/networkmanager_dmenu.desktop -o ~/.local/share/applications/networkmanager_dmenu.desktop
