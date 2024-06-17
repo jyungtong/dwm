@@ -68,9 +68,12 @@ static const char *mute[] = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggl
 #include "movestack.c"
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-  { 0,                            XF86XK_AudioRaiseVolume, spawn,          {.v = upvol } },
-  { 0,                            XF86XK_AudioLowerVolume, spawn,          {.v = downvol } },
-  { 0,                            XF86XK_AudioMute, spawn,                 {.v = mute } },
+  // { 0,                            XF86XK_AudioRaiseVolume, spawn,          {.v = upvol } },
+  // { 0,                            XF86XK_AudioLowerVolume, spawn,          {.v = downvol } },
+  // { 0,                            XF86XK_AudioMute, spawn,                 {.v = mute } },
+  { 0,                            XF86XK_AudioRaiseVolume, spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +10% && pkill -RTMIN+10 dwmblocks") },
+  { 0,                            XF86XK_AudioLowerVolume, spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -10% && pkill -RTMIN+10 dwmblocks") },
+  { 0,                            XF86XK_AudioMute,        spawn,          SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+10 dwmblocks") },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("j4-dmenu-desktop --dmenu='dmenu -i -l 5'") },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
