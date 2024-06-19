@@ -18,3 +18,6 @@ ln -sf $(pwd)/suspend.desktop ~/.local/share/applications/suspend.desktop
 
 # setup autostart
 ln -sf $(pwd)/.dwm ~/
+
+# setup volume script
+ln -sf $(pwd)/set_volume.sh ~/

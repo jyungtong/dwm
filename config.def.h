@@ -61,19 +61,13 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *lockscreen[]  = { "slock", NULL };
-static const char *upvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+10%", NULL };
-static const char *downvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-10%", NULL };
-static const char *mute[] = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
 
 #include "movestack.c"
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-  // { 0,                            XF86XK_AudioRaiseVolume, spawn,          {.v = upvol } },
-  // { 0,                            XF86XK_AudioLowerVolume, spawn,          {.v = downvol } },
-  // { 0,                            XF86XK_AudioMute, spawn,                 {.v = mute } },
-  { 0,                            XF86XK_AudioRaiseVolume, spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +10% && pkill -RTMIN+10 dwmblocks") },
-  { 0,                            XF86XK_AudioLowerVolume, spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -10% && pkill -RTMIN+10 dwmblocks") },
-  { 0,                            XF86XK_AudioMute,        spawn,          SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+10 dwmblocks") },
+  { 0,                            XF86XK_AudioRaiseVolume, spawn,          SHCMD("$HOME/set_volume.sh up") },
+  { 0,                            XF86XK_AudioLowerVolume, spawn,          SHCMD("$HOME/set_volume.sh down") },
+  { 0,                            XF86XK_AudioMute,        spawn,          SHCMD("$HOME/set_volume.sh mute") },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("j4-dmenu-desktop --dmenu='dmenu -i -l 5'") },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
