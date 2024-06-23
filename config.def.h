@@ -89,6 +89,7 @@ static const Key keys[] = {
   { 0,                            XF86XK_AudioRaiseVolume, spawn,          SHCMD("$HOME/set_volume.sh up") },
   { 0,                            XF86XK_AudioLowerVolume, spawn,          SHCMD("$HOME/set_volume.sh down") },
   { 0,                            XF86XK_AudioMute,        spawn,          SHCMD("$HOME/set_volume.sh mute") },
+  { 0,                            XF86XK_AudioPlay,        spawn,          SHCMD("playerctl play-pause") },
 	{ 0,                            XK_Print,                spawn,          SHCMD("flameshot gui") },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("j4-dmenu-desktop --dmenu='dmenu -i -l 5'") },
