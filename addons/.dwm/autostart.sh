@@ -3,5 +3,6 @@
 picom --vsync &
 xss-lock -- slock &
 xset s 600 &
-dwmblocks &
+killall dwmblocks || true && dwmblocks &
 dunst &
+fcitx5 &
