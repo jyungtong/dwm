@@ -1,6 +1,6 @@
 #!/bin/bash
 
-picom --backend=glx &
+picom --config ~/.config/picom/picom.conf --daemon &
 xss-lock -- slock &
 xset s 600 &
 killall dwmblocks || true && dwmblocks &
