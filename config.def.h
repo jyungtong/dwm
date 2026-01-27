@@ -81,7 +81,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "kitty", NULL };
+static const char *termcmd[]  = { "ghostty", NULL };
 static const char *lockscreen[]  = { "slock", NULL };
 
 #include "movestack.c"
@@ -131,7 +131,7 @@ static const Key keys[] = {
 	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, 
 	{ Mod1Mask|ControlMask,         XK_q,      spawn,          {.v = lockscreen } }, 
 	{ MODKEY|Mod1Mask,              XK_0,      togglegaps,     {0} },
-	{ Mod1Mask,                     XK_Tab,    alttab,         {0} },
+	// { Mod1Mask,                     XK_Tab,    alttab,         {0} },
 // sample for vanitygaps
 // +	{ MODKEY|ShiftMask,             XK_h,      setcfact,       {.f = +0.25} },
 // +	{ MODKEY|ShiftMask,             XK_l,      setcfact,       {.f = -0.25} },
