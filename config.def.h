@@ -129,7 +129,8 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, 
-	{ Mod1Mask|ControlMask,         XK_q,      spawn,          {.v = lockscreen } }, 
+	{ Mod1Mask|ControlMask,         XK_q,      spawn,          {.v = lockscreen } },
+	{ Mod1Mask|ControlMask,         XK_e,      spawn,          SHCMD("emote") },
 	{ MODKEY|Mod1Mask,              XK_0,      togglegaps,     {0} },
 	// { Mod1Mask,                     XK_Tab,    alttab,         {0} },
 // sample for vanitygaps
